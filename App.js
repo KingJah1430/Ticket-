@@ -1,11 +1,18 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Login from './pages/Login';
+import Lobby from './pages/Lobby';
+import PickBoard from './pages/PickBoard';
 
 function App() {
   return (
-    <div className="App">
-      <h1>Welcome to The Ticket</h1>
-      <p>Make your picks for this week’s games!</p>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/lobby" element={<Lobby />} />
+        <Route path="/picks" element={<PickBoard />} />
+      </Routes>
+    </Router>
   );
 }
 
